@@ -46,7 +46,14 @@ function App() {
         }))
     }
     
-    
+    const handleLap = (id) => {
+        setStopwatchData(stopwatchData.map((stopwatch) => {
+            if (stopwatch.id === id) {
+                return { ...stopwatch, lap: [...stopwatch.lap, stopwatch.time] }
+            }
+            return stopwatch
+        }))
+    }
     return (
         <div className="App">
             <div className='container'>
