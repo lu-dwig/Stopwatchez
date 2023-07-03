@@ -19,6 +19,15 @@ function App() {
         return () => clearInterval(interval)
     }, [stopwatchData])
     
+    const handleStart = (id) => {
+        setStopwatchData(stopwatchData.map((stopwatch) => {
+            if (stopwatch.id === id) {
+                return { ...stopwatch, isRunning: true, time_started: new Date() - stopwatch.time - stopwatch.pause.reduce((a, b) => a + b, 0) }
+            }
+            return stopwatch
+        }))
+    }
+       
     
     return (
         <div className="App">
