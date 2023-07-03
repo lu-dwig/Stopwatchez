@@ -54,10 +54,21 @@ function App() {
             return stopwatch
         }))
     }
+
     return (
         <div className="App">
             <div className='container'>
                 <div className='left'>
+                <div style={{ display: "flex", alignItems: "center", flexDirection: "row", justifyContent: "space-between", width: "100%" }}>
+                        <div style={{ textAlign: "left" }}>
+                            <h1 style={{ fontWeight: "bold", fontSize: 30 }}>Stopwatch</h1>
+                            <p style={{ fontWeight: "normal", fontSize: 20 }}>Built by stackie</p>
+                        </div>
+                        <div style={{ cursor: "pointer", alignItems: "center", display: "flex", flexDirection: "row", gap: 10 }} onClick={() => setStopwatchData([...stopwatchData, { id: stopwatchData.length, name: `Timer ${stopwatchData.length + 1}`, time: 0, isRunning: false, lap: [], pause: [] }])}>
+                            <BsStopwatch size={20} color={"white"} />
+                            <p>Add Stopwatch</p>
+                        </div>
+                    </div>
                     
                 </div>
                 <div className='right'>
