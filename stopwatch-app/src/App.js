@@ -37,6 +37,15 @@ function App() {
         }))
     }
        
+    const handleReset = (id) => {
+        setStopwatchData(stopwatchData.map((stopwatch) => {
+            if (stopwatch.id === id) {
+                return { ...stopwatch, time: 0, isRunning: false, lap: [] }
+            }
+            return stopwatch
+        }))
+    }
+    
     
     return (
         <div className="App">
