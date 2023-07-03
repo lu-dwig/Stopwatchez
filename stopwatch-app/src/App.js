@@ -77,7 +77,14 @@ function App() {
                         <button className={"control-buttons"} onClick={() => handleReset(stopwatchData[selectedRow].id)}>Reset</button>
                     </div>
                     <p className='lap-label'>Laps</p>
-                     
+                    <div className='lap-container'>
+                        {stopwatchData[selectedRow]?.lap.length > 0 && stopwatchData[selectedRow]?.lap.map((lap, index) => (
+                            <div style={{ display: "flex", justifyContent: "space-between", width: "500px" }}>
+                                <p>Lap {index + 1}</p>
+                                <p className='lap-time-label' key={index}>{new Date(lap).toISOString().slice(11, -1)}</p>
+                            </div>
+                        ))}
+                    </div> 
                 </div>
                 <div className='right'>
 
