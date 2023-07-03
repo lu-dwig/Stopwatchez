@@ -28,6 +28,15 @@ function App() {
         }))
     }
        
+    const handleStop = (id) => {
+        setStopwatchData(stopwatchData.map((stopwatch) => {
+            if (stopwatch.id === id) {
+                return { ...stopwatch, isRunning: false, pause: [...stopwatch.pause, new Date() - stopwatch.time_started - stopwatch.pause.reduce((a, b) => a + b, 0)] }
+            }
+            return stopwatch
+        }))
+    }
+       
     
     return (
         <div className="App">
