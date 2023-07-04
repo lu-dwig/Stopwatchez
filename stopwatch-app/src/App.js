@@ -59,7 +59,7 @@ function App() {
         <div className="App">
             <div className='container'>
                 <div className='left'>
-                <div style={{ display: "flex", alignItems: "center", flexDirection: "row", justifyContent: "space-between", width: "100%" }}>
+                    <div style={{ display: "flex", alignItems: "center", flexDirection: "row", justifyContent: "space-between", width: "100%" }}>
                         <div style={{ textAlign: "left" }}>
                             <h1 style={{ fontWeight: "bold", fontSize: 30 }}>Stopwatch</h1>
                             <p style={{ fontWeight: "normal", fontSize: 20 }}>Built by Ludwig</p>
@@ -69,7 +69,8 @@ function App() {
                             <p>Add Stopwatch</p>
                         </div>
                     </div>
-                    <p className="main-time-label">{stopwatchData[selectedRow]?.time > 0 ? new Date(stopwatchData[selectedRow]?.time).toISOString().slice(11, -1) : "00:00:00.000"}</p>
+                    
+                    <p className="main-time-label">{stopwatchData[selectedRow]?.time > 0 ? new Date (stopwatchData[selectedRow]?.time).toISOString().slice(11, -1) : "00:00:00.000"}</p>
                     <div className="main-button-controls">
                         <button className={"control-buttons"} onClick={() => handleStart(stopwatchData[selectedRow].id)}>Start</button>
                         <button className={"control-buttons"} onClick={() => handleLap(stopwatchData[selectedRow].id)}>Lap</button>
