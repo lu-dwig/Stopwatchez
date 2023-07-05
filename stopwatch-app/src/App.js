@@ -70,7 +70,7 @@ function App() {
                         </div>
                     </div>
                     
-                    <p className="main-time-label">{stopwatchData[selectedRow]?.time > 0 ? new Date (stopwatchData[selectedRow]?.time).toISOString().slice(11, -1) : "00:00:00.000"}</p>
+                    <p className="main-time-label">{stopwatchData[selectedRow].time > 0 ? new Date (stopwatchData[selectedRow].time).toISOString().slice(11, -1) : "00:00:00.000"}</p>
                     <div className="main-button-controls">
                         <button className={"control-buttons"} onClick={() => handleStart(stopwatchData[selectedRow].id)}>Start</button>
                         <button className={"control-buttons"} onClick={() => handleLap(stopwatchData[selectedRow].id)}>Lap</button>
@@ -79,7 +79,7 @@ function App() {
                     </div>
                     <p className='lap-label'>Laps</p>
                     <div className='lap-container'>
-                        {stopwatchData[selectedRow]?.lap.length > 0 && stopwatchData[selectedRow]?.lap.map((lap, index) => (
+                        {stopwatchData[selectedRow].lap.length > 0 && stopwatchData[selectedRow].lap.map((lap, index) => (
                             <div style={{ display: "flex", justifyContent: "space-between", width: "500px" }}>
                                 <p>Lap {index + 1}</p>
                                 <p className='lap-time-label' key={index}>{new Date(lap).toISOString().slice(11, -1)}</p>
